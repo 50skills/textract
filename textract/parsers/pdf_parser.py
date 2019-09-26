@@ -40,7 +40,7 @@ class Parser(ShellParser):
             args = ['/var/task/pdftotext', '-layout', filename, '-']
         else:
             args = ['/var/task/pdftotext', filename, '-']
-        stdout, _ = self.run(args)  # Can anyone hear me?
+        stdout, _ = self.run(['/var/task/pdftotext', filename, '-'])  # Can anyone hear me?
         return stdout
 
     def extract_pdfminer(self, filename, **kwargs):
