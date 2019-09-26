@@ -37,9 +37,9 @@ class Parser(ShellParser):
     def extract_pdftotext(self, filename, **kwargs):
         """Extract text from pdfs using the pdftotext command line utility."""
         if 'layout' in kwargs:
-            args = ['pdftotext', '-layout', filename, '-']
+            args = ['/var/task/pdftotext', '-layout', filename, '-']
         else:
-            args = ['pdftotext', filename, '-']
+            args = ['/var/task/pdftotext', filename, '-']
         stdout, _ = self.run(args)
         return stdout
 
